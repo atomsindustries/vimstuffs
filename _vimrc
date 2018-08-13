@@ -61,12 +61,12 @@ filetype plugin indent on    " required
 " }}}
 " Set up Editor -------------------------------------------------------------{{{
 
-colo atoms
+colo VisualStudioDark
 set nowrap
 set linebreak
 set noswapfile
 set number
-set guifont=Consolas:h12
+set guifont=Consolas:h14
 set cursorline
 set ignorecase " not sure if or why this needs to be used with smartcase, just what I saw being done
 set smartcase " Only case sensitive if capitals are in search string. using \c and \C can play with sensitivity
@@ -77,7 +77,10 @@ set textwidth=0 " Keeps vim from breaking line at col 80 while typing, could get
 autocmd BufEnter * lcd %:p:h
 
 "Change where backup files are saved
-set backupdir=d:\Vim\Backups
+set backupdir=C:\SetupFiles\Vim\Backups
+
+"Change where persistent undo files are saved
+set undodir=C:\SetupFiles\Vim\Undos
 
 " Setup Folding
 set foldmethod=marker
@@ -90,6 +93,17 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+
+
+" }}}
+" Window Resizing {{{
+
+" right/up : bigger
+" left/down : smaller
+nnoremap <m-right> :vertical resize +3<cr>
+nnoremap <m-left> :vertical resize -3<cr>
+nnoremap <m-up> :resize +3<cr>
+nnoremap <m-down> :resize -3<cr>
 
 " }}}
 " Leader Boards -------------------------------------------------------------{{{
